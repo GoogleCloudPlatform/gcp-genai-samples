@@ -1,0 +1,22 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install required packages
+COPY requirements_streamlit.txt .
+RUN pip install --no-cache-dir -r requirements_streamlit.txt
+
+# Copy your source files
+COPY ./src ./src
+
+# Add /app to PYTHONPATH so that 'src' is discoverable
+ENV PYTHONPATH="/app:${PYTHONPATH}"
+
+# Set a default port; Cloud Run will override this PORT environment variable as needed
+ENV PORT 8080
+
+# Not strictly required by Cloud Run, but does no harm
+EXPOSE 8080
+
+# Use the environment variable $PORT provided by Cloud Run
+CMD ["sh", "-c", "streamlit run src/frontend/streamlit_app.py --server.port=$PORT --server.address=0.0.0.0"]

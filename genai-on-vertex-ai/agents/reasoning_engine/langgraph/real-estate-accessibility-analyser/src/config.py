@@ -1,0 +1,8 @@
+PROJECT_ID = "your-project-id"
+LOCATION = "your-location"
+GCS_BUCKET = "your-gcs-bucket"
+FIRESTORE_COLLECTION = "houses"
+API_URL = "https://real-estate-api-<your-project-number>.<your-location>.run.app"
+STREAMLIT_URL = "https://real-estate-streamlit-<your-project-number>.<your-location>.run.app/"
+STAGING_BUCKET = "your-staging-bucket"
+AGENT_NAME = "projects/<your-project-number>/locations/<your-location>/reasoningEngines/<reasoning-engine-id>"

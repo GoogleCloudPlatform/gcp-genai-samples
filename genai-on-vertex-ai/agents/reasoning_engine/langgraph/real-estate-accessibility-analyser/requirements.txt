@@ -1,0 +1,13 @@
+fastapi==0.115.6
+uvicorn==0.32.1
+google-cloud-storage==2.19.0
+google-cloud-firestore==2.19.0
+python-multipart==0.0.19
+streamlit==1.41.0
+google-cloud-aiplatform[langchain,reasoningengine]==1.74.0
+cloudpickle==3.0.0
+pydantic==2.7.4
+langgraph==0.2.58
+langchain-google-vertexai==2.0.7
+requests==2.32.3
+pillow==11.0.0
