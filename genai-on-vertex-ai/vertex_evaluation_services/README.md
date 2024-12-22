@@ -2,7 +2,7 @@
 
 We offer a comprehensive set of notebooks that demonstrate how to use Vertex AI LLM Evaluation Services in conjunction with other Vertex AI services. Additionally, we have provided notebooks that delve into the theory behind evaluation metrics.
 
-Computation-Based Evaluation:
+(Discontinued - [Alternative](https://github.com/GoogleCloudPlatform/generative-ai/tree/main/gemini/evaluation)) Computation-Based Evaluation (text-bison@001):
  - Workflow for Evaluating LLM Performance in a Text Classification Task using Gemini and Vertex AI SDK
  - LLM Evaluation workflow for a Classification task using a tuned model and Vertex AI SDK
  - LLM Evaluation Workflow for a Classification Task using Gemini and Vertex AI Pipelines
