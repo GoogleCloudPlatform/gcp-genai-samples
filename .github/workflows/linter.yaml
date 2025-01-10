@@ -15,10 +15,10 @@ name: Lint Code Base
 #############################
 on:
   push:
-    branches-ignore: [ main ]
+    branches-ignore: [main]
     # Remove the line above to run when pushing to main
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 ###############
 # Set the Job #
@@ -34,35 +34,44 @@ jobs:
     # Load all steps #
     ##################
     steps:
-    ##########################
-    # Checkout the code base #
-    ##########################
-    - name: Checkout Code
-      uses: actions/checkout@v4
-      with:
-        # Full git history is needed to get a proper list of changed files within `super-linter`
-        fetch-depth: 0
+      ##########################
+      # Checkout the code base #
+      ##########################
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
 
-    ################################
-    # Run Linter against code base #
-    ################################
-    - name: Lint Code Base
-      uses: super-linter/super-linter/slim@v7
-      env:
-        DEFAULT_BRANCH: main
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        FILTER_REGEX_EXCLUDE: 'gemini/sample-apps/finance-advisor-spanner/.*\.sql'
-        LOG_LEVEL: WARN
-        SHELLCHECK_OPTS: -e SC1091 -e 2086
-        VALIDATE_ALL_CODEBASE: false
-        VALIDATE_CHANGED_FILES: true
-        PYTHON_PYINK: false
-        VALIDATE_PYTHON_ISORT: false
-        VALIDATE_CHECKOV: false
-        VALIDATE_JAVASCRIPT_STANDARD: false
-        VALIDATE_TYPESCRIPT_STANDARD: false
-        VALIDATE_GITHUB_ACTIONS: false
-        VALIDATE_YAML_PRETTIER: false
-        VALIDATE_JSCPD: false
-        FIX_SHELL_SHFMT: true
-        VALIDATE_BASH_EXEC: false
+      ################################
+      # Run Linter against code base #
+      ################################
+      - name: Lint Code Base
+        uses: super-linter/super-linter/slim@v7
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_EXCLUDE: "mkdocs"
+          # LOG_LEVEL: WARN
+          # SHELLCHECK_OPTS: -e SC1091 -e 2086
+          # VALIDATE_ALL_CODEBASE: false
+          # VALIDATE_CHANGED_FILES: true
+          # PYTHON_PYINK: false
+          # VALIDATE_PYTHON_ISORT: false
+          # VALIDATE_CHECKOV: false
+          # VALIDATE_JAVASCRIPT_STANDARD: false
+          # VALIDATE_TYPESCRIPT_STANDARD: false
+          # VALIDATE_GITHUB_ACTIONS: false
+          # VALIDATE_YAML_PRETTIER: false
+          # VALIDATE_JSCPD: false
+          # FIX_SHELL_SHFMT: true
+          # VALIDATE_BASH_EXEC: false
+          LOG_LEVEL: WARN
+          SHELLCHECK_OPTS: -e SC1091 -e 2086
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_PYTHON_PYINK: false
+          VALIDATE_PYTHON_ISORT: false
+          VALIDATE_CHECKOV: false
+          VALIDATE_JSCPD: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_TYPESCRIPT_STANDARD: false

@@ -249,6 +249,7 @@ nav:
         - Inline Ingestion of Documents: genai-on-vertex-ai/vertex_ai_search/inline_ingestion_of_documents.ipynb
         - Parsing and Chunking: genai-on-vertex-ai/vertex_ai_search/parsing_and_chunking_with_BYO.ipynb
         - Query Level Boosting: genai-on-vertex-ai/vertex_ai_search/query_level_boosting_filtering_and_facets.ipynb
+        - Event-based Triggering of Manual Recrawl for Vertex AI Search Advanced Website Datastores: genai-on-vertex-ai/vertex_ai_search/manual_recrawl_urls_with_trigger.ipynb
       - DIY RAG: 
         - Overview: genai-on-vertex-ai/retrieval_augmented_generation/README.md
         - Building Grounded RAG App: genai-on-vertex-ai/retrieval_augmented_generation/diy_rag_with_vertexai_apis/build_grounded_rag_app_with_vertex.ipynb
